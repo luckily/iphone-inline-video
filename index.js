@@ -272,6 +272,9 @@ function overloadAPI(video) {
 
 	// Limit timeupdate events
 	preventEvent(video, 'timeupdate', preventWithPropOrFullscreen);
+	
+	// Limit loadedmetadata events for player initial.
+	preventEvent(video, 'loadedmetadata', preventWithPropOrFullscreen);
 
 	// Prevent occasional native ended events
 	preventEvent(video, 'ended', preventWithPropOrFullscreen);
